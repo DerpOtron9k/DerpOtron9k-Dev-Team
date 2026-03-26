@@ -1,0 +1,22 @@
+# Example project-scoped Codex MCP config
+# Merge into your active Codex config as needed.
+
+[mcp_servers.serena]
+command = "uvx"
+args = ["--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server", "--transport", "stdio"]
+startup_timeout_sec = 60.0
+
+[mcp_servers.context7]
+command = "npx.cmd"
+args = ["-y", "@upstash/context7-mcp"]
+startup_timeout_sec = 60.0
+
+[mcp_servers.context7.env]
+CONTEXT7_API_KEY = "set-me"
+
+[mcp_servers.taskmaster]
+command = "task-master-mcp.cmd"
+startup_timeout_sec = 60.0
+
+[mcp_servers.taskmaster.env]
+TASK_MASTER_TOOLS = "standard"

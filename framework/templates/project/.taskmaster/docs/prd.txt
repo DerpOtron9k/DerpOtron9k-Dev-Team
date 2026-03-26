@@ -1,0 +1,20 @@
+<context>
+# Overview
+Describe the product, who it serves, and the main job to be done.
+
+# Core Features
+List the primary product capabilities.
+
+# User Experience
+Describe the primary user, core flows, and UX priorities.
+</context>
+<PRD>
+# Technical Architecture
+Document the intended stack and architectural boundaries.
+
+# Development Roadmap
+Describe the initial phased roadmap.
+
+# Risks and Mitigations
+Describe the main delivery risks and mitigations.
+</PRD>

@@ -1,0 +1,28 @@
+<context>
+# Overview
+This repository starts as a reusable AI-assisted development shell.
+
+The actual product framing should be established during:
+
+`Start Dev Team Kickoff`
+
+# Expected Kickoff Outcomes
+- product framing
+- primary user and job
+- non-goals
+- technical boundary assumptions
+- initial epic map
+- first sprint or backlog-refinement recommendation
+</context>
+<PRD>
+# Status
+Kickoff pending.
+
+# Product Owner
+To be confirmed during kickoff.
+
+# Delivery Notes
+- Use the starter delivery ring in `.codex/agents/`.
+- Select the real architecture council from `Subagent Directory/`.
+- Use Task Master as the delivery-layer system after kickoff clarifies the project.
+</PRD>
