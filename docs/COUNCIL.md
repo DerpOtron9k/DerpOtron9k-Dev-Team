@@ -14,12 +14,15 @@ These seats are meant to lead the initial kickoff and shape the project's first 
 
 The architecture council should be selected during kickoff based on:
 
+- explicit Product Owner direction
 - product shape
 - technical stack
 - current risks
 - expected delivery cadence
 
 Use [Subagent Directory](/R:/GitRepo/DerpOtron9k-Dev-Team/Subagent%20Directory) as the upstream catalog when selecting additional seats.
+
+Do not activate project-specific council seats until the Product Owner has provided direction.
 
 ## Recommended Kickoff Outcome
 

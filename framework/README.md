@@ -10,6 +10,7 @@ This directory contains the reusable governance layer that can be installed into
   - starter docs and continuity files
 - `overlays/`
   - project-governance seats that are intentionally layered on top of the upstream catalog
+  - examples in `overlays/game-dev/` and `overlays/android-dev/`
 
 ## Installation Model
 

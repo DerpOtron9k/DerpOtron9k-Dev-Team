@@ -24,17 +24,19 @@ When the user uses the kickoff trigger, the LLM should:
    - inherited
    - already mid-development
 3. identify or confirm the Product Owner
-4. inspect installed seats in `.codex/agents/`
-5. inspect whether Serena and Context7 are configured or missing
-6. recommend any missing council or delivery seats needed for this project
-7. read:
+4. request explicit product direction from the Product Owner unless it is already clearly documented by the Product Owner
+5. stop in a waiting state if product direction is still unclear
+6. inspect installed seats in `.codex/agents/`
+7. inspect whether Serena and Context7 are configured or missing
+8. recommend any missing council or delivery seats needed for this project only after product direction is explicit
+9. read:
    - `AGENTS.md`
    - `docs/COUNCIL.md`
    - `docs/DELIVERY_MODEL.md`
    - `docs/CEREMONIES.md`
    - `docs/MCP_STACK.md` if present
    - `.taskmaster/docs/prd.txt` if present
-8. produce a kickoff output that covers:
+10. produce a kickoff output that covers:
    - product framing
    - primary user and job to be done
    - non-goals
@@ -43,7 +45,7 @@ When the user uses the kickoff trigger, the LLM should:
    - initial epic map
    - current sprint recommendation or backlog-refinement recommendation
    - top Product Owner confirmations needed
-9. update repo artifacts if the user wants the kickoff formalized
+11. update repo artifacts if the user wants the kickoff formalized
 
 ## Kickoff Output Shape
 
@@ -58,6 +60,9 @@ The kickoff should answer:
 
 ## Guardrails
 
+- Do not infer product direction from repo name, example docs, overlay folders, reference blueprints, untracked files, or previous speculative planning.
+- If the Product Owner has not provided direction yet, do not generate a project-specific PRD, epic map, sprint goal, or council shape.
+- In that case, write only a waiting-state checkpoint and the specific questions needed from the Product Owner.
 - Do not create a separate planning bureaucracy unless the project needs it.
 - Prefer updating existing PRD, epic, sprint, and continuity artifacts over creating duplicate docs.
 - Treat Task Master as the delivery-layer system, not the architecture source of truth.

@@ -2,11 +2,16 @@
 # Overview
 This repository starts as a reusable AI-assisted development shell.
 
-The actual product framing should be established during:
+The actual product framing must come from the Product Owner during:
 
 `Start Dev Team Kickoff`
 
+# Kickoff Rule
+- Do not infer product direction from repo name, example docs, overlays, or reference artifacts.
+- If Product Owner direction is not yet explicit, keep this PRD in a waiting state.
+
 # Expected Kickoff Outcomes
+- Product Owner direction
 - product framing
 - primary user and job
 - non-goals
@@ -16,13 +21,25 @@ The actual product framing should be established during:
 </context>
 <PRD>
 # Status
-Kickoff pending.
+Waiting for explicit Product Owner direction.
 
 # Product Owner
-To be confirmed during kickoff.
+The current user is the Product Owner unless they explicitly choose otherwise.
+
+# Current Direction State
+No project direction has been committed yet.
+
+Reference material in the repo does not count as direction by itself.
+
+# Kickoff Questions For The Product Owner
+1. What product are we building?
+2. Who is it for?
+3. What is the first meaningful outcome or slice?
+4. What is explicitly out of scope for now?
+5. Are there any technical or platform constraints already decided?
 
 # Delivery Notes
 - Use the starter delivery ring in `.codex/agents/`.
-- Select the real architecture council from `Subagent Directory/`.
+- Select the real architecture council from `Subagent Directory/` only after Product Owner direction is explicit.
 - Use Task Master as the delivery-layer system after kickoff clarifies the project.
 </PRD>

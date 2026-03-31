@@ -36,11 +36,17 @@ function Ensure-Directory {
 
 function Find-SeatToml {
     param([string]$SeatName)
-    $match = Get-ChildItem -Path $CatalogRoot -Recurse -Filter "$SeatName.toml" | Select-Object -First 1
-    if (-not $match) {
-        throw "Could not find seat TOML for '$SeatName' under '$CatalogRoot'."
+
+    $overlayMatch = Get-ChildItem -Path $OverlayRoot -Recurse -Filter "$SeatName.toml" | Select-Object -First 1
+    if ($overlayMatch) {
+        return $overlayMatch.FullName
     }
-    return $match.FullName
+
+    $catalogMatch = Get-ChildItem -Path $CatalogRoot -Recurse -Filter "$SeatName.toml" | Select-Object -First 1
+    if (-not $catalogMatch) {
+        throw "Could not find seat TOML for '$SeatName' under '$OverlayRoot' or '$CatalogRoot'."
+    }
+    return $catalogMatch.FullName
 }
 
 function Write-TemplateFile {
@@ -135,14 +141,8 @@ $allSeats = @($CouncilSeats + $deliverySeatList)
 $allSeats = $allSeats | Select-Object -Unique
 
 foreach ($seat in $allSeats) {
-    if ($seat -eq "scrum-coach") {
-        $overlayPath = Join-Path $OverlayRoot "scrum-coach.toml"
-        Copy-Item -Path $overlayPath -Destination (Join-Path $TargetProjectPath ".codex\agents\scrum-coach.toml") -Force
-    }
-    else {
-        $sourceToml = Find-SeatToml -SeatName $seat
-        Copy-Item -Path $sourceToml -Destination (Join-Path $TargetProjectPath ".codex\agents\$seat.toml") -Force
-    }
+    $sourceToml = Find-SeatToml -SeatName $seat
+    Copy-Item -Path $sourceToml -Destination (Join-Path $TargetProjectPath ".codex\agents\$seat.toml") -Force
 
     Initialize-SeatHistory -SeatName $seat
 }

@@ -41,6 +41,12 @@ This repo is not just a subagent directory. It also packages a reusable working 
 
 This repository is designed to be forked and then used as the starting point for a new AI-assisted development project.
 
+Important kickoff rule:
+
+- this repo contains reusable examples and overlays
+- those examples are not product direction by themselves
+- kickoff must wait for explicit Product Owner direction before turning any example into a real PRD, epic map, sprint, or council choice
+
 After forking:
 
 1. rename the repository as needed
@@ -128,18 +134,21 @@ When the user says `Start Dev Team Kickoff`, the LLM should:
 
 1. inspect the repo and current project state
 2. identify or confirm the Product Owner
-3. confirm whether the project is new, inherited, or mid-stream
-4. propose the right council seats from `Subagent Directory/`
-5. confirm or install the delivery ring
-6. establish or refine:
+3. request explicit product direction from the Product Owner unless that direction is already clearly documented by the Product Owner
+4. confirm whether the project is new, inherited, or mid-stream
+5. propose the right council seats from `Subagent Directory/` only after direction is explicit
+6. confirm or install the delivery ring
+7. establish or refine:
    - product framing
    - non-goals
    - architecture boundaries
    - initial epic map
    - starter PRD
    - current sprint or first sprint proposal
-7. initialize or refine Task Master usage
-8. create or update continuity files and kickoff checkpoint memory
+8. initialize or refine Task Master usage
+9. create or update continuity files and kickoff checkpoint memory
+
+Kickoff must not infer product direction from the repo name, reference documents, example overlays, or experimental files.
 
 The kickoff should produce:
 
@@ -148,6 +157,12 @@ The kickoff should produce:
 - a first epic map
 - a sprint goal or a recommendation to refine backlog first
 - explicit Product Owner decisions that still need confirmation
+
+If Product Owner direction is still missing, kickoff should instead produce:
+
+- a documented waiting state
+- explicit questions for the Product Owner
+- no project-specific PRD, epic map, sprint goal, or council assumptions
 
 ## Kickoff Prompt File
 
@@ -188,6 +203,11 @@ Some seats should stay project-specific. This repo includes a reusable `scrum-co
 - what the Product Owner / council split is
 
 Use overlays when a generic upstream seat is not enough.
+
+Current examples:
+
+- [docs/UNREAL_GAME_DEV_BLUEPRINT.md](/R:/GitRepo/DerpOtron9k-Dev-Team/docs/UNREAL_GAME_DEV_BLUEPRINT.md) with seats in [framework/overlays/game-dev](/R:/GitRepo/DerpOtron9k-Dev-Team/framework/overlays/game-dev)
+- [docs/ANDROID_MOBILE_DEV_BLUEPRINT.md](/R:/GitRepo/DerpOtron9k-Dev-Team/docs/ANDROID_MOBILE_DEV_BLUEPRINT.md) with seats in [framework/overlays/android-dev](/R:/GitRepo/DerpOtron9k-Dev-Team/framework/overlays/android-dev)
 
 ## Default MCP Staples
 

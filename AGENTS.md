@@ -16,9 +16,23 @@ Start Dev Team Kickoff
 - At kickoff, the LLM should:
   - inspect the repo state
   - confirm the Product Owner
+  - request explicit product direction from the Product Owner if it is not already documented by the Product Owner
+  - wait for Product Owner direction before selecting a project direction, council shape, PRD framing, epic map, or sprint goal
   - use the starter delivery ring
   - recommend and install any missing project-specific council seats from `Subagent Directory/`
   - create or refine the PRD, epic map, sprint, and continuity files
+
+## Direction Guardrail
+
+- Do not infer product direction from:
+  - the repository name
+  - example docs
+  - reference blueprints
+  - overlay seat folders
+  - untracked files
+  - previously generated assumptions
+- Example or reference material in this repo is not active product direction unless the Product Owner explicitly says it is.
+- If direction is unclear, kickoff must stop at a waiting state and ask the Product Owner for direction before shaping project-specific artifacts.
 
 ## Continuity Protocol
 
